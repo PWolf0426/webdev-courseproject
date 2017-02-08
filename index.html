@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Paul's Favorite Video Games - Home</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<link rel="stylesheet" href="themes/courseprojecttheme.min.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.2.5.min.js"></script>
+		<!--
+
+		-->
+	</head>
+	<body>
+		<div data-role="page" data-theme="a" id="homepage">
+			<div data-role="header" data-theme="a">
+				<div class="logo"><img src="logobannerresized.png" width="100%" height="100%" alt="Paul's favorite video games logo." /></div>
+			</div>
+
+			<div data-role="header">
+				<a href="#navpanel" class="ui-btn ui-icon-bars ui-btn-left ui-btn-icon-notext ui-corner-all"></a>
+				<h1>Paul's Favorite Video Games</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<p>Welcome to Paul's Favorite Video Games app! The purpose of this app is to be able to display a list of Paul's favorite games, add (and possibly update and delete) favorites, and show an about page for why this site is created. Additionally, I might try to add URL links to my list of favorites that point to particular pages where users can be directed to other sites where they might purchase the game, such as Steam or Amazon.</p>
+				<p>Press the "bars" icon up in the header to view the new navigation bar for this app!</p>
+				<p style="text-align: center; font-weight: bold;">My Newest Favorite - Warhammer Total War</p>
+				<p>Content coming soon...</p>
+				<img src="undercons.jpg" width="100%" height="100%" alt="Website under construction." class="ui-corner-all ui-shadow" />
+			</div>
+
+			<div data-role="footer">
+				<h1>&copy Paul Nater. Mobile Application Development</h1>
+			</div>
+
+			<div data-role="panel" id="navpanel" data-display="overlay" data-theme="a">
+				<h2>Navigation</h2>
+				<a href="#enterfavoritepage" class="ui-btn ui-icon-edit ui-btn-icon-left ui-corner-all ui-shadow">Add Favorites</a>
+				<a href="#favoritespage" class="ui-btn ui-icon-bullets ui-btn-icon-left ui-corner-all ui-shadow">View Favorites</a>
+				<a href="#homepage" data-rel="close" class="ui-btn ui-icon-delete ui-btn-icon-left ui-corner-all ui-shadow">Close</a>
+			</div>
+		</div> <!-- end of home page -->
+
+		<!-- Start of View Favorites List Page -->
+		<div data-role="page" data-theme="a" id="favoritespage" data-add-back-btn="true">
+			<div data-role="header" data-theme="a">
+				<div class="logo"><img src="logobannerresized.png" width="100%" height="100%" alt="Paul's favorite video games logo." /></div>
+			</div>
+
+			<div data-role="header" data-add-back-btn="true">
+				<h1>View Favorite Video Games</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<!-- <p>Attention!: The list displayed is a placeholder to demonstrate how the list will look like.</p> -->
+				<form class="ui-filterable">
+					<input id="favoritesFilter" data-type="search">
+				</form>
+				<ul data-role="listview" id="favoriteslist" data-filter="true" data-autodividers="true" data-input="#favoritesFilter">
+					<!-- place holder data to demonstrate how the data will be displayed -->
+					<li data-role="collapsible">
+						<h2 id="titleheader"></h2>
+						<div class="ui-grid-d ui-responsive">
+							<div class="ui-block-a">
+								<h2>Title:</h2>
+								<p id="titleparagraph"></p>
+							</div>
+							<div class="ui-block-b">
+								<h2>Developer:</h2>
+								<p id="developerparagraph"></p>
+							</div>
+							<div class="ui-block-c">
+								<h2>Publisher:</h2>
+								<p id="publisherparagraph"></p>
+							</div>
+							<div class="ui-block-d">
+								<h2>Available for download?</h2>
+								<p id="ddparagraph"></p>
+							</div>
+							<div class="ui-block-e">
+								<h2>Description:</h2>
+								<p id="descriptionparagraph"></p>
+							</div>
+						</div>
+					</li>
+					<!-- end of placeholder demonstration -->
+				</ul>
+			</div>
+
+			<div data-role="footer" style="text-align:center;" data-position="fixed">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#homepage" class="ui-btn ui-icon-home ui-btn-icon-left ui-corner-all ui-shadow">Home</a>
+					<a href="#enterfavoritepage" class="ui-btn ui-icon-edit ui-btn-icon-left ui-corner-all ui-shadow">Add Favorites</a>
+					<a href="#viewinfopanel" class="ui-btn ui-icon-info ui-btn-icon-left ui-corner-all ui-shadow">Information</a>
+				</div>
+			</div>
+
+			<!-- infomation panel -->
+			<div data-role="panel" id="viewinfopanel" data-display="overlay" data-position="right" data-position-fixed="true">
+				<h2>Instructions</h2>
+				<p>View my favorite games from this screen. Use the search bar to filter the list for the title you are looking for. Use the buttons on the bottom of the screen to jump back to the home page or add another favorite to the list!</p>
+				<a href="#favoritespage" data-rel="close" class="ui-btn ui-icon-delete ui-btn-icon-left ui-corner-all ui-shadow">Close</a>
+			</div>
+		</div>
+
+		<!-- Start of Edit Favorites form page -->
+		<div data-role="page" data-theme="a" id="enterfavoritepage" data-add-back-btn="true">
+			<div data-role="header" data-theme="a">
+				<div class="logo"><img src="logobannerresized.png" width="100%" height="100%" alt="Paul's favorite video games logo." /></div>
+			</div>
+
+			<div data-role="header" data-add-back-btn="true">
+				<h1>Add Favorite Video Games</h1>
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<form method="post" action="" id="favoritesform">
+					<label for="title">Game Title:</label>
+					<input type="text" name="title" id="title" class="localstorage" />
+					<label for="developer">Developer:</label>
+					<input type="text" name="developer" id="developer" class="localstorage" />
+					<label for="publisher">Publisher:</label>
+					<input type="text" name="publisher" id="publisher" class="localstorage" />
+					<!-- digital download radio button group -->
+					<fieldset data-role="controlgroup">
+						<legend>Available for digital download?</legend>
+							<label for="ddyes">Yes</label>
+							<input type="radio" name="ddyes" id="ddyes" value="Yes" class="localstorage" />
+							<label for="ddno">No</label>
+							<input type="radio" name="ddno" id="ddno" value="No" class="localstorage" />
+					</fieldset>
+					<label for="description">Game Description: (Optional)</label>
+					<textarea name="description" id="description" class="localstorage"></textarea>
+					<input type="reset" value="Reset" data-inline="true" data-icon="check" />
+					<!-- <input type="submit" value="Submit Button" data-icon="check" data-inline="true" /> -->
+					<input type="button" value="Save to Local Storage" data-inline="true" id="save" data-icon="cloud" />
+					<input type="button" value="Clear Local Storage" data-inline="true" id="clear" data-icon="delete" />
+				</form>
+				<p id="detectlocalstorage"></p>
+				<p id="testing"></p>
+			</div>
+
+			<div data-role="footer" style="text-align:center;" data-position="fixed">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#homepage" class="ui-btn ui-icon-home ui-btn-icon-left ui-corner-all ui-shadow">Home</a>
+					<a href="#favoritespage" class="ui-btn ui-icon-bullets ui-btn-icon-left ui-corner-all ui-shadow">View Favorites</a>
+					<a href="#addfavoritesinfopanel" class="ui-btn ui-icon-info ui-btn-icon-left ui-corner-all ui-shadow">Information</a>
+				</div>
+			</div>
+
+			<!-- infomation panel -->
+			<div data-role="panel" id="addfavoritesinfopanel" data-display="overlay" data-position="right" data-position-fixed="true">
+				<h2>Instructions</h2>
+				<p>Add some more favorite games to the list from this screen. Use the "Save to Local Storage" button to add another favorite to the list. Use the "Clear Local Storage" button to delete all the data from local storage. Clearing the data from local storage will delete the entire list of saved favorites.</p>
+				<a href="#enterfavoritepage" data-rel="close" class="ui-btn ui-icon-delete ui-btn-icon-left ui-corner-all ui-shadow">Close</a>
+			</div>
+		</div>
+	</body>
+
+	<!-- local storeage scripts -->
+	<script type="text/javascript">
+		// detect if browser can store local data and display appropriate messaging
+		function storageAvailable(type) {
+			try {
+				var storage = window[type],
+					x = '__storage_test__';
+				storage.setItem(x, x);
+				storage.removeItem(x);
+				return true;
+			}
+			catch(e) {
+				return false;
+			}
+		}
+		if (storageAvailable('localStorage')) {
+			document.getElementById("detectlocalstorage").innerHTML = "This browser is capable of local storage.";
+		} else {
+			document.getElementById("detectlocalstorage").innerHTML = "This browser is NOT capable of local storage. Please use a browser that supports local storage to store favorites.";
+		}
+
+		// save form data to local storage
+		function saveData() {
+			// set a value for the download radio button as a text string that can be stored in local storage.
+			var ddStringValue = "";
+			if (document.getElementById('ddyes').checked) {
+				ddStringValue = "Yes";
+			} else {
+				ddStringValue = "No";
+			}
+			// create favorite object
+			var favoriteGameObj = { "title":document.getElementById('title').value,
+								"developer":document.getElementById('developer').value,
+								"publisher":document.getElementById('publisher').value,
+								"ddvalue":ddStringValue,
+								"description":document.getElementById('description').value
+								};
+			var favoriteGameObjJSONString = JSON.stringify(favoriteGameObj);
+			localStorage.setItem("favoriteObj", favoriteGameObjJSONString);
+			getLocalStorage();
+			document.getElementById('favoritesform').reset();
+			location.reload(true);
+		}
+
+		// clear data from local storage
+		function clearData() {
+			document.getElementById('favoritesform').reset();
+			localStorage.clear();
+				document.getElementById('titleheader').innerHTML = "No Favorite Saved...";
+				document.getElementById('titleparagraph').innerHTML = "";
+				document.getElementById('developerparagraph').innerHTML = "";
+				document.getElementById('publisherparagraph').innerHTML = "";
+				document.getElementById('descriptionparagraph').innerHTML = "";
+				document.getElementById('ddparagraph').innerHTML = "";
+		}
+
+		// get and display data from local storage and add a favorite item to the list page.
+		function getLocalStorage() {
+			try {
+				var favoriteGameObjJSONText = localStorage.getItem("favoriteObj");
+				var favoriteGameObjJSONStringToObj = JSON.parse(favoriteGameObjJSONText);
+				document.getElementById('titleheader').innerHTML = favoriteGameObjJSONStringToObj.title;
+				document.getElementById('titleparagraph').innerHTML = favoriteGameObjJSONStringToObj.title;
+				document.getElementById('developerparagraph').innerHTML = favoriteGameObjJSONStringToObj.developer;
+				document.getElementById('publisherparagraph').innerHTML = favoriteGameObjJSONStringToObj.publisher;
+				document.getElementById('descriptionparagraph').innerHTML = favoriteGameObjJSONStringToObj.description;
+				document.getElementById('ddparagraph').innerHTML = favoriteGameObjJSONStringToObj.ddvalue;
+			} catch(err) {
+				// Code to run if there is an error or if the favorite object has a NULL value.
+			}
+		}
+
+		// create event listeners for the save and clear buttons
+		document.getElementById("save").addEventListener("click", saveData);
+		document.getElementById("clear").addEventListener("click", clearData);
+		window.addEventListener("load", getLocalStorage);
+	</script>
+</html>
