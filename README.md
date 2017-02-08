@@ -16,7 +16,7 @@ Page Descriptions/Site Structure:
   
 #
 
-  Add Favorites Page: This page contains a form that allows the user to enter in some data about their favorite game. This data is saved using local storage, and the data will appear when the View Favorites Page is visited. The footer contains buttons to navigate to the home page, the view favorites page, and an information panel that gives instructions on how to use the page.
+  Add Favorites Page: This page contains a form that allows the user to enter in some data about their favorite game. This data is saved using local storage, and the data will appear when the View Favorites Page is visited. The buttons on the bottom of the form allow users to clear the form, save the data to local storage, or clear their local storage. The footer contains buttons to navigate to the home page, the view favorites page, and an information panel that gives instructions on how to use the page.
   
 #
 
