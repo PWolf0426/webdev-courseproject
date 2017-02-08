@@ -11,4 +11,4 @@ Page Descriptions/Site Structure:
 #
   View Favorites Page: This page contains the data the user entered into the form on the Add Favorites page. The page only allows the user to enter in one favorite at the moment. More work will be done on that in the future. The footer contains buttons to navigate to the home page, the view favorites page, and an information panel that gives instructions on how to use the page.
 # URL for the Page
-URL for the site: http://sotd.us/paulnater/mobileapplicationdevelopment/module6/index.html#enterfavoritepage
+URL for the site: http://sotd.us/paulnater/mobileapplicationdevelopment/module6/index.html
